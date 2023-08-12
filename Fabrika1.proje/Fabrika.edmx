@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="FabrikaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+          <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Internet_Sales">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Brand" Type="nvarchar(max)" />
+          <Property Name="Colour" Type="nvarchar(max)" />
+          <Property Name="Number" Type="nvarchar(max)" />
+          <Property Name="pıece" Type="nvarchar(max)" />
+          <Property Name="prıce" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="barcod_no" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="AddDate" Type="datetime" />
+          <Property Name="UpdateDate" Type="datetime" />
+          <Property Name="DeletdDate" Type="datetime" />
+          <Property Name="İsdeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Materıals_Avaılable">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Colour" Type="nvarchar(max)" />
+          <Property Name="Model" Type="nvarchar(max)" />
+          <Property Name="Brand" Type="nvarchar(max)" />
+          <Property Name="Barcod_No" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="quantıty" Type="nvarchar(max)" />
+          <Property Name="number_plate" Type="nvarchar(max)" />
+          <Property Name="breed" Type="nvarchar(max)" />
+          <Property Name="AddDate" Type="datetime" />
+          <Property Name="UpdateDate" Type="datetime" />
+          <Property Name="DeletdDate" Type="datetime" />
+          <Property Name="İsdeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Shoe_Manufacturıng">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Colour" Type="nvarchar(max)" />
+          <Property Name="Model" Type="nvarchar(max)" />
+          <Property Name="Brand" Type="nvarchar(max)" />
+          <Property Name="Barcod_No" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="fınıshed_shoes_sıze" Type="nvarchar(max)" />
+          <Property Name="AddDate" Type="datetime" />
+          <Property Name="UpdateDate" Type="datetime" />
+          <Property Name="DeletdDate" Type="datetime" />
+          <Property Name="İsdeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Shoes_ın_and_out">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Colour" Type="nvarchar(max)" />
+          <Property Name="Model" Type="nvarchar(max)" />
+          <Property Name="Brand" Type="nvarchar(max)" />
+          <Property Name="Barcod_No" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="shoes_delıvery_dates" Type="nvarchar(max)" />
+          <Property Name="returned_shoe_sıze" Type="nvarchar(max)" />
+          <Property Name="AddDate" Type="datetime" />
+          <Property Name="UpdateDate" Type="datetime" />
+          <Property Name="DeletdDate" Type="datetime" />
+          <Property Name="İsdeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="FabrikaModelStoreContainer">
+          <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Internet_Sales" EntityType="Self.Internet_Sales" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Materıals_Avaılable" EntityType="Self.Materıals_Avaılable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Shoe_Manufacturıng" EntityType="Self.Shoe_Manufacturıng" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Shoes_ın_and_out" EntityType="Self.Shoes_ın_and_out" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FabrikaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="C__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Internet_Sales">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Brand" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Colour" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Number" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="pıece" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="prıce" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="barcod_no" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="AddDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <Property Name="DeletdDate" Type="DateTime" Precision="3" />
+          <Property Name="İsdeleted" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Materıals_Avaılable">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Colour" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Model" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Brand" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Barcod_No" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="quantıty" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="number_plate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="breed" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AddDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <Property Name="DeletdDate" Type="DateTime" Precision="3" />
+          <Property Name="İsdeleted" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Shoe_Manufacturıng">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Colour" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Model" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Brand" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Barcod_No" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="fınıshed_shoes_sıze" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AddDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <Property Name="DeletdDate" Type="DateTime" Precision="3" />
+          <Property Name="İsdeleted" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Shoes_ın_and_out">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Colour" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Model" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Brand" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Barcod_No" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="shoes_delıvery_dates" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="returned_shoe_sıze" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AddDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <Property Name="DeletdDate" Type="DateTime" Precision="3" />
+          <Property Name="İsdeleted" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="FabrikaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+          <EntitySet Name="Internet_Sales" EntityType="Self.Internet_Sales" />
+          <EntitySet Name="Materıals_Avaılable" EntityType="Self.Materıals_Avaılable" />
+          <EntitySet Name="Shoe_Manufacturıng" EntityType="Self.Shoe_Manufacturıng" />
+          <EntitySet Name="Shoes_ın_and_out" EntityType="Self.Shoes_ın_and_out" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FabrikaModelStoreContainer" CdmEntityContainer="FabrikaEntities">
+          <EntitySetMapping Name="C__MigrationHistory">
+            <EntityTypeMapping TypeName="FabrikaModel.C__MigrationHistory">
+              <MappingFragment StoreEntitySet="__MigrationHistory">
+                <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+                <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Internet_Sales">
+            <EntityTypeMapping TypeName="FabrikaModel.Internet_Sales">
+              <MappingFragment StoreEntitySet="Internet_Sales">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="Colour" ColumnName="Colour" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="pıece" ColumnName="pıece" />
+                <ScalarProperty Name="prıce" ColumnName="prıce" />
+                <ScalarProperty Name="barcod_no" ColumnName="barcod_no" />
+                <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="DeletdDate" ColumnName="DeletdDate" />
+                <ScalarProperty Name="İsdeleted" ColumnName="İsdeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Materıals_Avaılable">
+            <EntityTypeMapping TypeName="FabrikaModel.Materıals_Avaılable">
+              <MappingFragment StoreEntitySet="Materıals_Avaılable">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Colour" ColumnName="Colour" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="Barcod_No" ColumnName="Barcod_No" />
+                <ScalarProperty Name="quantıty" ColumnName="quantıty" />
+                <ScalarProperty Name="number_plate" ColumnName="number_plate" />
+                <ScalarProperty Name="breed" ColumnName="breed" />
+                <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="DeletdDate" ColumnName="DeletdDate" />
+                <ScalarProperty Name="İsdeleted" ColumnName="İsdeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Shoe_Manufacturıng">
+            <EntityTypeMapping TypeName="FabrikaModel.Shoe_Manufacturıng">
+              <MappingFragment StoreEntitySet="Shoe_Manufacturıng">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Colour" ColumnName="Colour" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="Barcod_No" ColumnName="Barcod_No" />
+                <ScalarProperty Name="fınıshed_shoes_sıze" ColumnName="fınıshed_shoes_sıze" />
+                <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="DeletdDate" ColumnName="DeletdDate" />
+                <ScalarProperty Name="İsdeleted" ColumnName="İsdeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Shoes_ın_and_out">
+            <EntityTypeMapping TypeName="FabrikaModel.Shoes_ın_and_out">
+              <MappingFragment StoreEntitySet="Shoes_ın_and_out">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Colour" ColumnName="Colour" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="Barcod_No" ColumnName="Barcod_No" />
+                <ScalarProperty Name="shoes_delıvery_dates" ColumnName="shoes_delıvery_dates" />
+                <ScalarProperty Name="returned_shoe_sıze" ColumnName="returned_shoe_sıze" />
+                <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="DeletdDate" ColumnName="DeletdDate" />
+                <ScalarProperty Name="İsdeleted" ColumnName="İsdeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
